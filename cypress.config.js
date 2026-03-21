@@ -4,7 +4,7 @@ module.exports = defineConfig({
   allowCypressEnv: false,
 
   e2e: {
-    baseUrl: "https://google.com",
+    baseUrl: "https://guest:welcome2qauto@qauto.forstudy.space/",
     viewportWidth: 1280,
     viewportHeight: 720
   },
