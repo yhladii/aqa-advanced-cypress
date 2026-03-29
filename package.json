@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:qauto:run": "cypress run --config-file cypress.config.qauto.js",
+    "cy:qauto2:run": "cypress run --config-file cypress.config.qauto2.js",
+    "report:generate": "marge mochawesome.json",
+    "report": "npm run test && npm run report:merge && npm run report:generate",
+     "cy:run": "cypress run --reporter mochawesome"
   },
   "repository": {
     "type": "git",
@@ -18,6 +23,10 @@
   },
   "homepage": "https://github.com/yhladii/aqa-advanced-cypress#readme",
   "devDependencies": {
-    "cypress": "^15.11.0"
+    "cypress": "^15.13.0",
+    "cypress-mochawesome-reporter": "^4.0.2",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.1.1",
+    "mochawesome-report-generator": "^6.3.2"
   }
 }

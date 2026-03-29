@@ -24,7 +24,12 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
  
 Cypress.Commands.add('login', (email, password) => {
 
-  cy.visit('/')
+cy.visit('/', {
+  auth: {
+    username: 'guest',
+    password: 'welcome2qauto'
+  }
+})
  
   cy.contains('button', 'Sign In').click()
  
