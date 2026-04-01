@@ -42,5 +42,21 @@ cy.visit('/', {
   cy.url().should('include', '/panel/garage')
 
 })
-
+Cypress.Commands.add(
+  "createExpense",
+  (carId, mileage, liters, totalCost, reportedAt) => {
+    return cy.request({
+      method: "POST",
+      url: "/api/expenses",
+      body: {
+        carId,
+        mileage,
+        liters,
+        totalCost,
+        reportedAt,
+      },
+    });
+  }
+);
+ 
  
